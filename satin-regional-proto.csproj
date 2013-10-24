@@ -46,15 +46,34 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Less">
-      <HintPath>..\packages\Less.3.0\lib\Less.dll</HintPath>
+    <Reference Include="AjaxMin">
+      <HintPath>packages\AjaxMin.4.84.4790.14417\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette">
+      <HintPath>packages\Cassette.2.3.0\lib\net40-client\Cassette.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy">
-      <HintPath>..\packages\Nancy.0.20.0\lib\net40\Nancy.dll</HintPath>
+      <HintPath>packages\Nancy.0.20.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Hosting.Aspnet">
-      <HintPath>..\packages\Nancy.Hosting.Aspnet.0.20.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+      <HintPath>packages\Nancy.Hosting.Aspnet.0.20.0\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Less">
+      <HintPath>packages\SquishIt.Less.0.9.3\lib\SquishIt.Less.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,6 +84,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor.Unofficial">
+      <HintPath>packages\System.Web.Razor.Unofficial.2.0.2\lib\net40\System.Web.Razor.Unofficial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -72,55 +94,160 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>packages\YUICompressor.NET.2.0.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\bootstrap-theme.css" />
-    <Content Include="content\bootstrap-theme.min.css" />
-    <Content Include="content\bootstrap.css" />
-    <Content Include="content\bootstrap.min.css" />
-    <Content Include="content\leaflet.css" />
-    <Content Include="content\satin.css">
-      <DependentUpon>satin.less</DependentUpon>
-    </Content>
-    <Content Include="content\satin.min.css">
-      <DependentUpon>satin.less</DependentUpon>
-    </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="img\logo-new.png" />
-    <Content Include="img\nav-bar-bg-new.png" />
-    <Content Include="img\result-section.png" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="content\satin.less" />
-    <Content Include="index.html" />
-    <Content Include="scripts\config.js.map" />
-    <None Include="scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="scripts\config.js" />
-    <Content Include="scripts\leaflet-0.6.4.js" />
-    <Content Include="scripts\leaflet-0.6.4.min.js" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery-1.9.1.js" />
-    <Content Include="scripts\jquery-1.9.1.min.js" />
-    <Content Include="scripts\r.js" />
-    <Content Include="scripts\regional.js" />
-    <Content Include="scripts\require.js" />
-    <Content Include="scripts\typings\jquery\jquery.d.ts" />
-    <Content Include="scripts\typings\leaflet\leaflet.d.ts" />
-    <Content Include="scripts\typings\requirejs\require.d.ts" />
+    <Content Include="content\css\bootstrap-theme.css" />
+    <Content Include="content\css\bootstrap-theme.min.css" />
+    <Content Include="content\css\bootstrap.css" />
+    <Content Include="content\css\bootstrap.min.css" />
+    <Content Include="content\bootstrap\css\bootstrap-docs.css" />
+    <Content Include="content\bootstrap\css\bootstrap.css" />
+    <Content Include="content\bootstrap\css\prettify.css" />
+    <Content Include="content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\bootstrap\js\application.js" />
+    <Content Include="content\bootstrap\js\google-code-prettify\prettify.js" />
+    <Content Include="content\bootstrap\js\holder.js" />
+    <Content Include="content\css\demo.css" />
+    <Content Include="content\css\docs.css" />
+    <Content Include="content\css\flat-ui.css" />
+    <Content Include="content\css\leaflet.css" />
+    <Content Include="content\css\style.css" />
+    <Content Include="content\fonts\Flat-UI-Icons.dev.svg" />
+    <Content Include="content\fonts\Flat-UI-Icons.svg" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\fonts\lato\lato-black-webfont.svg" />
+    <Content Include="content\fonts\lato\lato-bold-webfont.svg" />
+    <Content Include="content\fonts\lato\lato-bolditalic-webfont.svg" />
+    <Content Include="content\fonts\lato\lato-italic-webfont.svg" />
+    <Content Include="content\fonts\lato\lato-light-webfont.svg" />
+    <Content Include="content\fonts\lato\lato-regular-webfont.svg" />
+    <Content Include="content\images\logo-new.png" />
+    <Content Include="content\images\nav-bar-bg-new.png" />
+    <Content Include="content\images\result-section.png" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="index.cshtml" />
+    <Content Include="content\scripts\application.js" />
+    <Content Include="content\scripts\bootstrap-select.js" />
+    <Content Include="content\scripts\bootstrap-switch.js" />
+    <Content Include="content\scripts\bootstrap-typeahead.js" />
+    <Content Include="content\scripts\config.js.map" />
+    <Content Include="content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\less\demo.less" />
+    <Content Include="content\less\docs.less" />
+    <Content Include="content\less\flat-ui.less" />
+    <Content Include="content\less\fonts.less" />
+    <Content Include="content\less\icon-font.less" />
+    <Content Include="content\less\mixins.less" />
+    <Content Include="content\less\modules\button-groups.less" />
+    <Content Include="content\less\modules\buttons.less" />
+    <Content Include="content\less\modules\caret.less" />
+    <Content Include="content\less\modules\checkbox-and-radio.less" />
+    <Content Include="content\less\modules\code.less" />
+    <Content Include="content\less\modules\dropdown.less" />
+    <Content Include="content\less\modules\footer.less" />
+    <Content Include="content\less\modules\forms.less" />
+    <Content Include="content\less\modules\input-icons.less" />
+    <Content Include="content\less\modules\login.less" />
+    <Content Include="content\less\modules\navbar.less" />
+    <Content Include="content\less\modules\pager.less" />
+    <Content Include="content\less\modules\pagination.less" />
+    <Content Include="content\less\modules\palette.less" />
+    <Content Include="content\less\modules\progress-bars.less" />
+    <Content Include="content\less\modules\select.less" />
+    <Content Include="content\less\modules\share.less" />
+    <Content Include="content\less\modules\switch.less" />
+    <Content Include="content\less\modules\tagsinput.less" />
+    <Content Include="content\less\modules\tile.less" />
+    <Content Include="content\less\modules\todo.less" />
+    <Content Include="content\less\modules\tooltip.less" />
+    <Content Include="content\less\modules\type.less" />
+    <Content Include="content\less\modules\ui-slider.less" />
+    <Content Include="content\less\modules\video.less" />
+    <Content Include="content\less\scaffolding.less" />
+    <Content Include="content\less\spaces.less" />
+    <Content Include="content\less\variables.less" />
+    <Content Include="content\fonts\Flat-UI-Icons.eot" />
+    <Content Include="content\fonts\Flat-UI-Icons.ttf" />
+    <Content Include="content\fonts\Flat-UI-Icons.woff" />
+    <Content Include="content\fonts\icomoon-session.json" />
+    <Content Include="content\fonts\lato\lato-black-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-black-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-black-webfont.woff" />
+    <Content Include="content\fonts\lato\lato-bold-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-bold-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-bold-webfont.woff" />
+    <Content Include="content\fonts\lato\lato-bolditalic-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-bolditalic-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-bolditalic-webfont.woff" />
+    <Content Include="content\fonts\lato\lato-italic-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-italic-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-italic-webfont.woff" />
+    <Content Include="content\fonts\lato\lato-light-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-light-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-light-webfont.woff" />
+    <Content Include="content\fonts\lato\lato-regular-webfont.eot" />
+    <Content Include="content\fonts\lato\lato-regular-webfont.ttf" />
+    <Content Include="content\fonts\lato\lato-regular-webfont.woff" />
+    <None Include="content\scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="content\scripts\config.js" />
+    <Content Include="content\scripts\flatui-checkbox.js" />
+    <Content Include="content\scripts\flatui-radio.js" />
+    <Content Include="content\scripts\html5shiv.js" />
+    <Content Include="content\scripts\icon-font-ie7.js" />
+    <Content Include="content\scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="content\scripts\jquery.placeholder.js" />
+    <Content Include="content\scripts\jquery.smint.js" />
+    <Content Include="content\scripts\jquery.stacktable.js" />
+    <Content Include="content\scripts\jquery.tagsinput.js" />
+    <Content Include="content\scripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="content\scripts\leaflet-0.6.4.js" />
+    <Content Include="content\scripts\leaflet-0.6.4.min.js" />
+    <Content Include="content\scripts\bootstrap.js" />
+    <Content Include="content\scripts\bootstrap.min.js" />
+    <Content Include="content\scripts\jquery-1.9.1.js" />
+    <Content Include="content\scripts\jquery-1.9.1.min.js" />
+    <Content Include="content\scripts\r.js" />
+    <Content Include="content\scripts\regional.js" />
+    <Content Include="content\scripts\require.js" />
+    <Content Include="content\scripts\typings\jquery\jquery.d.ts" />
+    <Content Include="content\scripts\typings\leaflet\leaflet.d.ts" />
+    <Content Include="content\scripts\typings\requirejs\require.d.ts" />
+    <Content Include="content\scripts\g.bar-min.js" />
+    <Content Include="content\scripts\g.bar.js" />
+    <Content Include="content\scripts\g.dot-min.js" />
+    <Content Include="content\scripts\g.dot.js" />
+    <Content Include="content\scripts\g.line-min.js" />
+    <Content Include="content\scripts\g.line.js" />
+    <Content Include="content\scripts\g.pie-min.js" />
+    <Content Include="content\scripts\g.pie.js" />
+    <Content Include="content\scripts\g.raphael-min.js" />
+    <Content Include="content\scripts\g.raphael.js" />
+    <Content Include="content\scripts\raphael-min.js" />
+    <Content Include="content\scripts\raphael.js" />
+    <Content Include="content\scripts\webflow.js" />
     <Content Include="Web.config" />
-    <Content Include="scripts\jquery-1.9.1.min.map" />
+    <Content Include="content\scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="NancyFxModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="scripts\regional.js.map" />
-    <Content Include="scripts\leaflet-0.6.4.min.js.map">
+    <Content Include="content\scripts\regional.js.map" />
+    <Content Include="content\scripts\leaflet-0.6.4.min.js.map">
       <DependentUpon>leaflet-0.6.4.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
@@ -131,9 +258,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\regional.ts" />
-    <TypeScriptCompile Include="scripts\config.ts" />
+    <TypeScriptCompile Include="content\scripts\regional.ts" />
+    <TypeScriptCompile Include="content\scripts\config.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -160,4 +288,8 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

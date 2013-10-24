@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Baltic Sea Regional Monitoring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="content/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="content/css/flat-ui.css" rel="stylesheet">
+    <link href="content/css/leaflet.css" rel="stylesheet">
+    <link href="content/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="content/images/favicon.ico">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="content/scripts/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#map-page">Map</a>
+            </li>
+            <li>
+                <a href="#reports-page">Reports</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="content" id="map-page">
+        <div class="col-lg-9">
+            <div class="timeline navbar-inverse">
+                <button class="btn btn-xs btn-primary fui-arrow-left"></button>
+                <button class="btn btn-xs btn-primary">-3 d</button>
+                <button class="btn btn-xs btn-primary">-2 d</button>
+                <button class="btn btn-xs btn-primary">-1 d</button>
+                <button class="btn btn-xs">Today</button>
+            </div>
+            <div id="map" class="map leaflet-container leaflet-fade-anim" style="height: 500px; position: relative;" tabindex="0"></div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel">
+                <div class="panel-heading palette-sun-flower"><h2 class="panel-title">Layers</h2></div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-1">Meris</a></h6>
+                        <ul class="list-group collapse" id="layer-1">
+                            <li class="list-group-item">
+                                <label class="checkbox" for="checkbox1">
+                                    <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+                                    sst
+                                </label>
+                                <div id="slider" class="ui-slider opacity-slider" title="Layer Opacity"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <label class="checkbox" for="checkbox2">
+                                    <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">
+                                    pic
+                                </label>
+                                <div id="slider-2" class="ui-slider opacity-slider" title="Layer Opacity"></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="todo-content">
+                            <h4 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-2">Modis</a></h4>
+                            <ul class="todo list-group collapse" id="layer-2">
+                                <li>sst</li>
+                                <li>pic</li>
+                                <li>poc</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="todo-content">
+                            <h4 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-3">OISST-AVHRR-V2</a></h4>
+                            <ul class="todo list-group collapse" id="layer-3">
+                                <li>sst</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="todo-content">
+                            <h5 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-4">SOLAB-AMSRE-L2-NN</a></h5>
+                            <ul class="todo list-group collapse" id="layer-4">
+                                <li>sst</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="content" id="reports-page">
+        <h1>Reports</h1>
+        <div id="holder"></div>
+    </section>
+    <script data-main="content/scripts/config" src="content/scripts/require.js"></script>
+    <script src="~/content/scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/content/scripts/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="~/content/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/content/scripts/bootstrap.min.js"></script>
+    <script src="~/content/scripts/bootstrap-select.js"></script>
+    <script src="~/content/scripts/bootstrap-switch.js"></script>
+    <script src="~/content/scripts/flatui-checkbox.js"></script>
+    <script src="~/content/scripts/flatui-radio.js"></script>
+    <script src="~/content/scripts/jquery.tagsinput.js"></script>
+    <script src="~/content/scripts/jquery.placeholder.js"></script>
+    <script src="~/content/scripts/raphael-min.js"></script>
+    <script src="~/content/scripts/g.raphael-min.js"></script>
+    <script src="~/content/scripts/g.line-min.js"></script>
+    <script src="~/content/scripts/g.pie-min.js"></script>
+    <script src="~/content/scripts/g.bar-min.js"></script>
+    <script src="~/content/scripts/webflow.js"></script>
+    <script src="~/content/scripts/application.js"></script>
+    <script>
+     window.onload = function () {
+         var r = Raphael("holder"),
+             txtattr = { font: "12px sans-serif" };
+                
+         var x = [], y = [], y2 = [], y3 = [];
+
+         for (var i = 0; i < 1e6; i++) {
+             x[i] = i * 10;
+             y[i] = (y[i - 1] || 0) + (Math.random() * 7) - 3;
+             y2[i] = (y2[i - 1] || 150) + (Math.random() * 7) - 3.5;
+             y3[i] = (y3[i - 1] || 300) + (Math.random() * 7) - 4;
+         }
+
+         r.text(160, 10, "Simple Line Chart (1000 points)").attr(txtattr);
+         r.text(480, 10, "shade = true (10,000 points)").attr(txtattr);;
+         r.text(160, 250, "shade = true & nostroke = true (1,000,000 points)").attr(txtattr);
+         r.text(480, 250, "Symbols, axis and hover effect").attr(txtattr);
+
+         r.linechart(10, 10, 300, 220, x, [y.slice(0, 1e3), y2.slice(0, 1e3), y3.slice(0, 1e3)]).hoverColumn(function () {
+             this.set = r.set(
+                 r.circle(this.x, this.y[0]),
+                 r.circle(this.x, this.y[1]),
+                 r.circle(this.x, this.y[2])
+             );
+         }, function () {
+             this.set.remove();
+         });
+
+         r.linechart(330, 10, 300, 220, x, [y.slice(0, 1e4), y2.slice(0, 1e4), y3.slice(0, 1e4)], { shade: true });
+         r.linechart(10, 250, 300, 220, x, [y, y2, y3], { nostroke: true, shade: true });
+
+         var lines = r.linechart(330, 250, 300, 220, [[1, 2, 3, 4, 5, 6, 7],[3.5, 4.5, 5.5, 6.5, 7, 8]], [[12, 32, 23, 15, 17, 27, 22], [10, 20, 30, 25, 15, 28]], { nostroke: false, axis: "0 0 1 1", symbol: "circle", smooth: true }).hoverColumn(function () {
+             this.tags = r.set();
+
+             for (var i = 0, ii = this.y.length; i < ii; i++) {
+                 this.tags.push(r.tag(this.x, this.y[i], this.values[i], 160, 10).insertBefore(this).attr([{ fill: "#fff" }, { fill: this.symbols[i].attr("fill") }]));
+             }
+         }, function () {
+             this.tags && this.tags.remove();
+         });
+
+         lines.symbols.attr({ r: 6 });
+         // lines.lines[0].animate({"stroke-width": 6}, 1000);
+         // lines.symbols[0].attr({stroke: "#fff"});
+         // lines.symbols[0][1].animate({fill: "#f00"}, 1000);
+     };
+    </script>
+</body>
+</html>

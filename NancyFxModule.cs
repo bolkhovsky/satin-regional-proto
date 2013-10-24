@@ -11,7 +11,7 @@ namespace satin_regional_proto
     {
         public NancyFxModule()
         {
-            Get["/"] = param => View["index.html"];
+            Get["/"] = param => View["index.cshtml"];
 
             Get["/datasets"] = _ =>
                 {

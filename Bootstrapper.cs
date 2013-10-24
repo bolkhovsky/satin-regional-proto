@@ -11,9 +11,6 @@ namespace satin_regional_proto
         protected override void ConfigureConventions(Nancy.Conventions.NancyConventions nancyConventions)
         {
             base.ConfigureConventions(nancyConventions);
-            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("fonts"));
-            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("img"));
-            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("scripts"));
         }
     }
 }
