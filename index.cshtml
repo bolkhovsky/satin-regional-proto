@@ -37,53 +37,20 @@
             <div id="map" class="map leaflet-container leaflet-fade-anim" style="height: 500px; position: relative;" tabindex="0"></div>
         </div>
         <div class="col-lg-3">
-            <div class="panel">
+            <div class="panel" id="datasets">
                 <div class="panel-heading palette-sun-flower"><h2 class="panel-title">Layers</h2></div>
-                <ul class="list-group">
+                <ul class="list-group" data-bind="foreach: datasets()">
                     <li class="list-group-item">
-                        <h6 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-1">Meris</a></h6>
-                        <ul class="list-group collapse" id="layer-1">
+                        <h6 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-1" data-bind="text: name">&nbsp;</a></h6>
+                        <ul class="list-group collapse" data-bind="foreach: layers()">
                             <li class="list-group-item">
                                 <label class="checkbox" for="checkbox1">
                                     <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
-                                    sst
+                                    <span data-bind="text: name"></span>
                                 </label>
                                 <div id="slider" class="ui-slider opacity-slider" title="Layer Opacity"></div>
                             </li>
-                            <li class="list-group-item">
-                                <label class="checkbox" for="checkbox2">
-                                    <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">
-                                    pic
-                                </label>
-                                <div id="slider-2" class="ui-slider opacity-slider" title="Layer Opacity"></div>
-                            </li>
                         </ul>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="todo-content">
-                            <h4 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-2">Modis</a></h4>
-                            <ul class="todo list-group collapse" id="layer-2">
-                                <li>sst</li>
-                                <li>pic</li>
-                                <li>poc</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="todo-content">
-                            <h4 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-3">OISST-AVHRR-V2</a></h4>
-                            <ul class="todo list-group collapse" id="layer-3">
-                                <li>sst</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="todo-content">
-                            <h5 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-target="#layer-4">SOLAB-AMSRE-L2-NN</a></h5>
-                            <ul class="todo list-group collapse" id="layer-4">
-                                <li>sst</li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -93,7 +60,6 @@
         <h1>Reports</h1>
         <div id="holder"></div>
     </section>
-    <script data-main="content/scripts/config" src="content/scripts/require.js"></script>
     <script src="~/content/scripts/jquery-1.9.1.min.js"></script>
     <script src="~/content/scripts/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="~/content/scripts/jquery.ui.touch-punch.min.js"></script>
@@ -109,8 +75,10 @@
     <script src="~/content/scripts/g.line-min.js"></script>
     <script src="~/content/scripts/g.pie-min.js"></script>
     <script src="~/content/scripts/g.bar-min.js"></script>
+    <script src="~/content/scripts/knockout-2.3.0.debug.js"></script>
     <script src="~/content/scripts/webflow.js"></script>
-    <script src="~/content/scripts/application.js"></script>
+    <script src="~/content/scripts/app/application.js"></script>
+    <script data-main="content/scripts/config" src="content/scripts/require.js"></script>
     <script>
      window.onload = function () {
          var r = Raphael("holder"),
