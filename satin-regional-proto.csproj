@@ -356,6 +356,73 @@
     <Content Include="content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="content\scripts\jquery-ui-1.10.3.js" />
     <Content Include="content\scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="content\OpenLayers-2.10\img\blank.gif" />
+    <Content Include="content\OpenLayers-2.10\img\cloud-popup-relative.png" />
+    <Content Include="content\OpenLayers-2.10\img\drag-rectangle-off.png" />
+    <Content Include="content\OpenLayers-2.10\img\drag-rectangle-on.png" />
+    <Content Include="content\OpenLayers-2.10\img\east-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\layer-switcher-maximize.png" />
+    <Content Include="content\OpenLayers-2.10\img\layer-switcher-minimize.png" />
+    <Content Include="content\OpenLayers-2.10\img\marker-blue.png" />
+    <Content Include="content\OpenLayers-2.10\img\marker-gold.png" />
+    <Content Include="content\OpenLayers-2.10\img\marker-green.png" />
+    <Content Include="content\OpenLayers-2.10\img\marker.png" />
+    <Content Include="content\OpenLayers-2.10\img\measuring-stick-off.png" />
+    <Content Include="content\OpenLayers-2.10\img\measuring-stick-on.png" />
+    <Content Include="content\OpenLayers-2.10\img\north-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\panning-hand-off.png" />
+    <Content Include="content\OpenLayers-2.10\img\panning-hand-on.png" />
+    <Content Include="content\OpenLayers-2.10\img\slider.png" />
+    <Content Include="content\OpenLayers-2.10\img\south-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\west-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\zoom-minus-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\zoom-plus-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\zoom-world-mini.png" />
+    <Content Include="content\OpenLayers-2.10\img\zoombar.png" />
+    <Content Include="content\OpenLayers-2.10\license.txt" />
+    <Content Include="content\OpenLayers-2.10\news.txt" />
+    <Content Include="content\OpenLayers-2.10\OpenLayers.js" />
+    <Content Include="content\OpenLayers-2.10\readme.txt" />
+    <Content Include="content\OpenLayers-2.10\release-license.txt" />
+    <Content Include="content\OpenLayers-2.10\repository-license.txt" />
+    <Content Include="content\OpenLayers-2.10\theme\default\framedCloud.css" />
+    <Content Include="content\OpenLayers-2.10\theme\default\google.css" />
+    <Content Include="content\OpenLayers-2.10\theme\default\ie6-style.css" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\add_point_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\add_point_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\blank.gif" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\close.gif" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\drag-rectangle-off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\drag-rectangle-on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_line_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_line_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_point_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_point_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_polygon_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\draw_polygon_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\editing_tool_bar.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\move_feature_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\move_feature_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\navigation_history.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\overview_replacement.gif" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\pan-panel-NOALPHA.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\pan-panel.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\panning-hand-off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\panning-hand-on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\pan_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\pan_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\remove_point_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\remove_point_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\ruler.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\save_features_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\save_features_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\view_next_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\view_next_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\view_previous_off.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\view_previous_on.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\zoom-panel-NOALPHA.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\img\zoom-panel.png" />
+    <Content Include="content\OpenLayers-2.10\theme\default\style.css" />
     <Content Include="Web.config" />
     <Content Include="content\scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
@@ -384,9 +451,7 @@
     <TypeScriptCompile Include="content\scripts\typings\knockout\knockout.amd.d.ts" />
     <TypeScriptCompile Include="content\scripts\typings\knockout\knockout.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

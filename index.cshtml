@@ -38,14 +38,14 @@
         </div>
         <div class="col-md-3">
             <div class="panel" id="datasets">
-                <div class="panel-heading palette-sun-flower"><h2 class="panel-title">Layers</h2></div>
+                <div class="panel-heading palette-green-sea"><h2 class="panel-title">Layers</h2></div>
                 <ul class="list-group" data-bind="foreach: datasets()">
                     <li class="list-group-item dataset">
                         <h6 class="list-group-item-heading"><a href="#" data-toggle="collapse" data-bind="text: name, attr: { 'data-target': '#layers_' + id }">&nbsp;</a></h6>
-                        <ul class="list-group collapse in" data-bind="foreach: layers(), attr: {id: 'layers_' + id}">
+                        <ul class="list-group collapse" data-bind="foreach: layers(), attr: {id: 'layers_' + id}">
                             <li class="list-group-item">
                                 <label class="checkbox" data-bind="attr: { for: 'checkbox_' + name + $parent.id }, event:{click:toggle}">
-                                    <input type="checkbox" data-toggle="checkbox" data-bind="attr: { id: 'checkbox_' + name + $parent.id }">
+                                    <input type="checkbox" data-toggle="checkbox" data-bind="chechked: isChecked(), attr: { id: 'checkbox_' + name + $parent.id }">
                                     <span data-bind="text: name"></span>
                                 </label>
                                 <div class="ui-slider opacity-slider" title="Layer Opacity" data-bind="slider: opacity"></div>
