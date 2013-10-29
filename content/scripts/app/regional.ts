@@ -22,7 +22,7 @@ export class Layer {
         });
         this.isChecked = ko.observable(false);
         this.isChecked.subscribe((val) => {
-            console.log('eeee');
+            console.log('isChecked');
         });
     }
 

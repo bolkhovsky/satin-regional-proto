@@ -22,7 +22,7 @@ define(["require", "exports"], function(require, exports) {
             });
             this.isChecked = ko.observable(false);
             this.isChecked.subscribe(function (val) {
-                console.log('eeee');
+                console.log('isChecked');
             });
         }
         Layer.prototype.toggle = function () {
