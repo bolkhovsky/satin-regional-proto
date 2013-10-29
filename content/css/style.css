@@ -6,3 +6,6 @@
 .opacity-slider {
     margin-bottom: 0px;
 }
+.list-group-item.dataset {
+    border-left: 20px solid #f1c40f !important;
+}

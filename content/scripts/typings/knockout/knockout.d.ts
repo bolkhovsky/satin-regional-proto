@@ -165,6 +165,9 @@ interface KnockoutBindingHandlers {
 
     // Rendering templates
     template: KnockoutBindingHandler;
+
+    //custom binding handlers
+    slider: KnockoutBindingHandler;
 }
 
 interface KnockoutMemoization {

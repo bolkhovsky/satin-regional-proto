@@ -40,7 +40,7 @@
 			
 			if ($el.prop('disabled') == false) {
 				$parent.toggleClass(ch) && checked ? $el.removeAttr(ch) : $el.prop(ch, ch);
-				$el.trigger(e).trigger('change'); 
+				$el.trigger(e).trigger('change');
 			}
 		}	 
 		
